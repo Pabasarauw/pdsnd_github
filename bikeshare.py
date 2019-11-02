@@ -68,7 +68,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
 
-    df = pd.read_csv(CITY_DATA[city.lower()])
+    df = get_filters()
     # convert the Start Time column to datetime#
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -246,7 +246,7 @@ def display_raw_data(df):
         else:
             print(df.iloc[head:tail, 0:-1])
             head +=5
-            tail +=5 
+            tail +=5
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
