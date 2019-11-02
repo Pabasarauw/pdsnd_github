@@ -5,10 +5,10 @@
 
 ### Description
 The project develops a code to compute statistical data related to bike share use in Chicago, New York City, and Washington in USA. Descriptive statistics related to the following parameters are computed:
-* Popular times of travel
-* Popular stations and trip
-* Trip duration
-* User information  
+1. Popular times of travel
+2. Popular stations and trip
+3. Trip duration
+4. User information  
 
 ### Files used
 * chicago.csv
