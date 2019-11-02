@@ -1,7 +1,7 @@
 ### Date created
 02.11.2019
 
-### Bike Share Statistics
+# Bike Share Statistics
 
 ### Description
 The project develops a code to compute statistical data related to bike share use in Chicago, New York City, and Washington in USA. Descriptive statistics related to the following parameters are computed:
