@@ -68,7 +68,8 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
 
-    df = pd.read_csv(CITY_DATA[city.lower()])
+
+    df = get_filters()
     # convert the Start Time column to datetime#
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -110,8 +111,7 @@ def time_stats(df):
 
 
     # TO DO: display the most common start hour
-    df['hour'] = df['Start Time'].dt.hour
-    most_common_start_hour = df['hour'].mode()[0]
+    most_common_start_hour = df['Start Time'].dt.hour.mode()[0]
     print('Most common start hour:', most_common_start_hour)
 
 
@@ -142,9 +142,19 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     most_frequent_start_end_stations = (df['Start Station'] + "to" + df['End Station']).mode()[0]
+<<<<<<< HEAD
     print('Most frequent start and end station:', most_frequent_start_end_stations)
 
 
+||||||| merged common ancestors
+    print('Most frequent combination of start station and end station trip:', most_frequent_start_end_stations)
+
+
+=======
+    print('Most frequent combination of start station and end station trip:', most_frequent_start_end_stations)
+
+
+>>>>>>> refactoring
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -244,7 +254,7 @@ def display_raw_data(df):
         if raw.lower() != 'yes':
            break
         else:
-            print(df[df.columns[0:-1]].iloc[head:tail])
+            print(df.iloc[head:tail, 0:-1])
             head +=5
             tail +=5
 
